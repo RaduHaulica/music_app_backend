@@ -38,6 +38,6 @@ http.createServer(function (req, res) {
         }); 
     } 
      
-}).listen(3000, function () { 
+}).listen(80, function () { 
     console.log("SERVER STARTED PORT: 3000"); 
 }); 
