@@ -39,5 +39,5 @@ http.createServer(function (req, res) {
     } 
      
 }).listen(process.env.PORT, function () { 
-    console.log("SERVER STARTED PORT: 3000"); 
+    console.log("SERVER STARTED PORT: HEROKU"); 
 }); 
