@@ -35,11 +35,11 @@ app.listen(port, () => {
 // =====
 
 // import route
-const authRoute = require('./routes/auth');
-const postRoute = require('./routes/posts');
-// Route Middleware
-app.use('/user', authRoute);
-app.use('/posts', postRoute);
+// const authRoute = require('./routes/auth');
+// const postRoute = require('./routes/posts');
+// // Route Middleware
+// app.use('/user', authRoute);
+// app.use('/posts', postRoute);
 
 // =====
 // ===== data =====
