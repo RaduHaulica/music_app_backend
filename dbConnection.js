@@ -1,4 +1,3 @@
-require('dotenv').config();
 class dbConnection {
 
     constructor(url) {
@@ -8,11 +7,11 @@ class dbConnection {
     _init(url) {
         if (url == "cloud") {
             this.connectionType = url;
-            url = process.env.DB_CLOUD_HOSTNAME;
+            url = "mongodb+srv://adminadmin:adminadmin@cluster0-q49zy.mongodb.net/test";
             this.Track = require('./models/cloudTrack');
         } else if (url == "local") {
             this.connectionType = url;
-            url = process.env.DB_LOCAL_HOSTNAME;
+            url = "mongodb://localhost:27017/music";
             this.Track = require('./models/track');
         }
         const mongoose = require('mongoose');

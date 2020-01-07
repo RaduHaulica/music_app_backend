@@ -2,7 +2,6 @@
 // TODO: split after everything is working
 
 /* config */
-require('dotenv').config();
 
 /* modules */
 const express = require('express');
