@@ -30,10 +30,6 @@ app.listen(port, () => {
 
 /* requests and routing */
 
-// =====
-// ===== authentication =====
-// =====
-
 // import route
 // const authRoute = require('./routes/auth');
 // const postRoute = require('./routes/posts');
@@ -41,11 +37,35 @@ app.listen(port, () => {
 // app.use('/user', authRoute);
 // app.use('/posts', postRoute);
 
+
+// =====
+// ===== authentication =====
+// =====
+
+app.post("/user/login", (req, res) => {
+    const data = {
+        "admin": {password: "pass"},
+        "user": {password: "user"}
+    };
+    console.log("logging in");
+    console.log("user :" + req.query.username + " | password :" + req.query.password);
+    
+    // check DB
+    if (Object.keys(data).indexOf(req.query.username) != -1)
+        if (data[req.query.username].password == req.query.password)
+        {
+            req.send("Success");
+            return ;
+        }
+
+    res.send("Failed");
+});
+
 // =====
 // ===== data =====
 // =====
 
-app.get("/test", (req, res) =>{
+app.get("/test", (req, res) => {
     console.log("connection tested");
     res.send("Server responded.");
 });
